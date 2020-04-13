@@ -25,6 +25,10 @@ app.use(express.static('static'))
 /*****************************
 * ROUTES
 /*****************************/
+
+// Controllers
+app.use('/auth', require('./controllers/auth'))
+
 // Creat a home page route above wildcard route
 app.get('/', (req, res) => {
 	res.render('home')
