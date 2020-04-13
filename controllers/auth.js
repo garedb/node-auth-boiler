@@ -6,8 +6,8 @@ router.get('/login', (req, res) => {
 	res.render('auth/login')
 })
 
-router.get('signup', (res, req) => {
-	res.send('STUB - sign up form')
+router.get('/signup', (req, res) => {
+	res.render('auth/signup')
 })
 
 // Export (allow me to include this in another page)
