@@ -20,7 +20,24 @@ This is a boilerplate for an Express app with local user authentication. It exis
 | Column | Type | Notes |
 |-------------|------------|-----------------------------------|
 | id | Integer | Serial primary key |
+| firstname | String | Required length > 1 |
+| lastname | String | - |
+| email | String | Unique Login |
+| password | String | Hash |
+| birthday | Date | - |
+| displayname | String | - |
+| admin | Boolean | Defaulted to False |
+| pic | String | - |
+| bio | Text | - |
+| createdAt | Date | Automatically added by sequelize |
+| updatedAt | Date | Automatically added by sequelize |
 
 ## Included Routes
+
+**Routes in Index**
+| Method | Path | Purpose |
+| ------ | -------------------- | ----------------------------- |
+| GET | `/` | Home Page |
+| GET | `*` | Catch-all for 404s |
 
 ## Directions For Use
