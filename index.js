@@ -2,12 +2,20 @@
 * NODE MODULES
 /*****************************/
 
+// Add in environment
+require('dotenv').config()
+
 // Require needed modules
 let express = require('express')
+let flash = require('connect-flash')
 let layouts = require('express-ejs-layouts')
+let session = require('express-session')
 
 // Create an app instance
 let app = express()
+
+// Include passport (via the passport config file)
+let passport = require('./config/passportConfig')
 
 /*****************************
 * SETTING / MIDDLEWARE
@@ -25,12 +33,33 @@ app.use(express.static('static'))
 // Decrypt the variables coming in via post routes (from forms)
 app.use(express.urlencoded({ extended: false }))
 
-/*****************************
-* ROUTES
-/*****************************/
+// set up sessions
+app.use(session({
+	secret: process.env.SESSION_SECRET,
+	resave: false,
+	saveUninitialized: true
+}))
+
+// Set up connect-flash for the flash alert messages (depends on session, order matters)
+app.use(flash())
+
+// Set up passport (depends on session; must come after it)
+app.use(passport.initialize())
+app.use(passport.session())
+
+// Custom middleware - make certain variables available to EJS pages through locals
+app.use((req, res, next) => {
+	res.locals.alerts = req.flash()
+	res.locals.user = req.user
+	next()
+})
+//*****************************
+//* ROUTES
+//*****************************/
 
 // Controllers
 app.use('/auth', require('./controllers/auth'))
+app.use('/profile', require('./controllers/profile'))
 
 // Creat a home page route above wildcard route
 app.get('/', (req, res) => {

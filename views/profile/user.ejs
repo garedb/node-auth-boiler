@@ -1,0 +1,12 @@
+<h1><%= user.displayname %>'s Profile</h1>
+
+<div class="row">
+	<div class="col s4">
+		<img src="<%=user.pic%>" alt="profile pic">
+	</div>
+	<div>
+		<p><strong>Name:</strong> <%= user.firstname %> <%= user.lastname %></p>
+		<p><strong>Birthday:</strong> <%= user.birthday %></p>
+		<p><strong>Zipcode:</strong> <%= user.zipcode %></p>
+	</div>
+</div>

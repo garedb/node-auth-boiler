@@ -1,34 +1,53 @@
 <nav>
 <nav class="orange lighten-1">
-<div class="nav-wrapper">
-  <a href="#" class="brand-logo">GB</a>
-  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-  <ul id="nav-mobile" class="right hide-on-med-and-down">
-	<li>
-		<a href="/">Home</a>
-	</li>
-	
-	<li>
-		<a href="/auth/login">Login</a>
-	</li>
+	<div class="nav-wrapper">
+  		<a href="#" class="brand-logo">Logo</a>
+  		<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  		<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li>
+					<a href="/">Home</a>
+				</li>
+			<% if (user) { %>
+				<li>
+					<a href="/profile/user">Profile Page</a>
+				</li>
+				<li>
+					<a href="/auth/logout">Logout</a>
+				</li>
+				<li>
+					Hey there, <%= user.displayname %>!
+				</li>
+			<% } else { %>
+				<li>
+					<a href="/auth/login">Login</a>
+				</li>
 
-	<li>
-		<a href="/auth/signup">Signup</a>
-	</li>
-  </ul>
-</div>
+				<li>
+					<a href="/auth/signup">Signup</a>
+				</li>
+			<% } %>
+  		</ul>
+	</div>
 </nav>
 
 <ul class="sidenav orange lighten-1" id="mobile-demo">
-	<li>
-		<a href="/">Home</a>
-	</li>
-	
-	<li>
-		<a href="/auth/login">Login</a>
-	</li>
+		<li>
+			<a href="/">Home</a>
+		</li>
+	<% if (user) { %>
+		<li>
+			<a href="/profile/user">Profile Page</a>
+		</li>
+		<li>
+			<a href="/auth/logout">Logout</a>
+		</li>
+	<% } else { %>
+		<li>
+			<a href="/auth/login">Login</a>
+		</li>
 
-	<li>
-		<a href="/auth/signup">Signup</a>
-	</li>
+		<li>
+			<a href="/auth/signup">Signup</a>
+		</li>
+	<% } %>
 </ul>
