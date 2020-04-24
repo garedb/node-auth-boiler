@@ -54,7 +54,7 @@ This is a boilerplate for an Express app with local user authentication. It exis
 | ------ | -------------------- | ----------------------------- |
 | GET | `/profile/user` | Show user dashboard (authorized user only |
 | GET | `/profile/admin` | Show admin dashboard (authorized admin only |
-| GET | `/profile/guest/:id` | Show user dashboard as guest (authorized user only |
+| GET | `/profile/guest/:id` | Show user dashboard as guest (authorized user only) |
 
 
 ## Directions For Use
