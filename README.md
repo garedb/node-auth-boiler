@@ -61,6 +61,20 @@ This is a boilerplate for an Express app with local user authentication. It exis
 
 ### 1. Clone the repository with a different name
 
+Run the following command on the terminal:
+
 ```sh
 git clone <repo_link> <new_name>
+```
+
+**For example**
+
+```sh
+git clone https://github.com/garedb/node-auth-boiler.git new-project-name
+```
+
+### 2. Install the modules for package.json
+
+```sh
+npm i
 ```
