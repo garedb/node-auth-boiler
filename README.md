@@ -78,3 +78,13 @@ git clone https://github.com/garedb/node-auth-boiler.git new-project-name
 ```sh
 npm i
 ```
+
+### 3. Customize the new project
+
+Remove the default parameters. For example:
+
+* Title in `layout.ejs`
+* Logo in the nav bar
+* Description and Repository fields in `package.json`
+* Remove this boilerplate's readme content
+* Switch Favicon to project-specific one (in `layout.ejs` head section)
